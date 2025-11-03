@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parking system</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-parking"></i>
+                <span>CityPark</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/facilities.html">Facilities</a></li>
+                <li><a href="#rates">Rates</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/login.html" class="login-btn">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="header-content">
+            <h1><i class="fas fa-parking"></i> Parking Pal</h1>
+            <p class="subtitle">Elegant Solutions for Modern Parking</p>
+            <div class="header-buttons">
+                <a href="#book" class="cta-button">Book Now</a>
+                <a href="#learn" class="secondary-button">Learn More</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <i class="fas fa-car"></i>
+                    <h3>1000+</h3>
+                    <p>Parking Spots</p>
+                    <div class="stat-details">
+                        <ul>
+                            <li>400+ Car Spots</li>
+                            <li>200+ SUV Spots</li>
+                            <li>300+ Bike Spots</li>
+                            <li>100+ EV Spots</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>37+</h3>
+                    <p>Locations</p>
+                    <div class="stat-details">
+                        <ul>
+                            <li>15 Downtown</li>
+                            <li>12 Suburban</li>
+                            <li>10 Mall Complex</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7</h3>
+                    <p>Service</p>
+                    <div class="stat-details">
+                        <ul>
+                            <li>Round-the-clock Security</li>
+                            <li>Night Patrol</li>
+                            <li>Emergency Support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>50,000+</h3>
+                    <p>Happy Customers</p>
+                    <div class="stat-details">
+                        <ul>
+                            <li>4.8/5 Rating</li>
+                            <li>98% Satisfaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section class="parking-showcase">
+                <div class="section-header">
+                    <h2>Our Premium Parking Facilities</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="car-showcase">
+<div class="car-image">
+    <img src="C5457-Porsche-Tower.jpg" alt="Luxury Car Parking">
+    <div class="overlay">Premium Spots</div>
+</div>
+<div class="car-image">
+    <img src="ev_charging_station_1.jpg" alt="EV Charging Station">
+    <div class="overlay">EV Charging & Reserved</div>
+</div>
+                </div>
+            </section>
+
+            <div class="status-section">
+                <div class="section-header">
+                    <h2>Current Parking Status</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="status-cards" id="available-spots"></div>
+            </div>
+
+            <section class="realtime-monitoring">
+                <div class="section-header">
+                    <h2>Real-time Parking Status</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                
+                <div class="monitoring-grid">
+                    <div class="occupancy-chart">
+                        <canvas id="occupancyChart"></canvas>
+                    </div>
+                    
+                    <div class="location-status">
+                        <div class="status-cards" id="occupancy-display">
+                            </div>
+                    </div>
+                    
+                    <div class="alerts-panel">
+                        <h3>Recent Alerts</h3>
+                        <div id="alertsList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rates" class="rates-section">
+                <div class="section-header">
+                    <h2>Parking Rates</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="rates-grid">
+                    <div class="rate-card">
+                        <div class="rate-header">
+                            <i class="fas fa-car"></i>
+                            <h3>Standard Car</h3>
+                        </div>
+                        <div class="rate-price">Rs10000/hour</div>
+                        <ul class="rate-features">
+                            <li>24/7 Access</li>
+                            <li>Security Cameras</li>
+                            <li>Covered Parking</li>
+                        </ul>
+                    </div>
+                
+                </div>
+            </section>
+
+            <section class="car-types-section">
+                <div class="section-header">
+                    <h2>Vehicles We Accommodate</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="car-types-grid">
+                    <div class="car-type-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537" alt="Sedan">
+                        </div>
+                        <div class="car-info">
+                            <h3>Sedan</h3>
+                            <p>Standard parking rate: Rs10000/hour</p>
+                            <ul class="car-features">
+                                <li><i class="fas fa-check"></i> Easy access spots</li>
+                                <li><i class="fas fa-check"></i> Covered parking available</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="car-type-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf" alt="SUV">
+                        </div>
+                        <div class="car-info">
+                            <h3>SUV</h3>
+                            <p>Standard parking rate: Rs35000/hour</p>
+                            <ul class="car-features">
+                                <li><i class="fas fa-check"></i> Wide parking spots</li>
+                                <li><i class="fas fa-check"></i> Height clearance guaranteed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="car-type-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a" alt="Luxury Car">
+                        </div>
+                        <div class="car-info">
+                            <h3>Luxury Cars</h3>
+                            <p>Premium parking rate: Rs45000/hour</p>
+                            <ul class="car-features">
+                                <li><i class="fas fa-check"></i> Premium secure spots</li>
+                                <li><i class="fas fa-check"></i> Valet service available</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="car-type-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89" alt="Electric Vehicle">
+                        </div>
+                        <div class="car-info">
+                            <h3>Electric Vehicles</h3>
+                            <p>Standard parking rate: Rs.15000/hour</p>
+                            <ul class="car-features">
+                                <li><i class="fas fa-check"></i> Charging stations</li>
+                                <li><i class="fas fa-check"></i> Priority spots</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="premium-showcase">
+                <div class="section-header">
+                    <h2>Premium Parking Experience</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="showcase-slider">
+                    <div class="showcase-slide">
+                        <img src="https://images.unsplash.com/photo-1621252179027-94459d278660" alt="Valet Parking">
+                        <div class="slide-content">
+                            <h3>Valet Service</h3>
+                            <p>Professional valet service for a hassle-free experience</p>
+                        </div>
+                    </div>
+                    <div class="showcase-slide">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9" alt="24/7 Security">
+                        <div class="slide-content">
+                            <h3>24/7 Security</h3>
+                            <p>Round-the-clock surveillance and security personnel</p>
+                        </div>
+                    </div>
+                    <div class="showcase-slide">
+                        <img src="https://images.unsplash.com/photo-1558425281-c539e5e5f28d" alt="EV Charging">
+                        <div class="slide-content">
+                            <h3>EV Charging</h3>
+                            <p>Fast charging stations for electric vehicles</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="forms-container">
+                <div class="parking-section">
+                    <div class="section-header">
+                        <h2>Park Your Vehicle</h2>
+                        <div class="decorative-line"></div>
+                    </div>
+                    <form id="parkingForm" class="classic-form">
+                        <div class="form-group">
+                            <label for="licensePlate">License Plate</label>
+                            <input type="text" id="licensePlate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleType">Vehicle Type</label>
+                            <select id="vehicleType" required>
+                                <option value="">Select vehicle type...</option>
+                                <option value="CAR">Car</option>
+                                <option value="MOTORCYCLE">Motorcycle</option>
+                                <option value="TRUCK">Truck</option>
+                                <option value="BUS">Bus</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Expected Duration</label>
+                            <select id="duration" required>
+                                <option value="">Select duration...</option>
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="24">24 Hours</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="classic-button">
+                            <span>Park Vehicle</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="checkout-section">
+                    <div class="section-header">
+                        <h2>Vehicle Checkout</h2>
+                        <div class="decorative-line"></div>
+                    </div>
+                    <form id="checkoutForm" class="classic-form">
+                        <div class="form-group">
+                            <label for="ticketId">Ticket ID</label>
+                            <input type="text" id="ticketId" required>
+                        </div>
+                        <button type="submit" class="classic-button secondary">
+                            <span>Calculate Fee</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <section class="vehicle-image-section">
+                <div class="section-header">
+                    <h2>Vehicle Images</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                
+                <form id="vehicleImageForm" class="image-upload-form">
+                    <div class="image-upload-container">
+                        <div class="upload-area" id="imagePreview">
+                            <i class="fas fa-camera"></i>
+                            <p>Click or drag image here</p>
+                        </div>
+                        <input type="file" id="vehicleImage" name="image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="upload-button">
+                        <i class="fas fa-upload"></i> Upload Image
+                    </button>
+                </form>
+
+                <div class="vehicle-images-grid">
+                    <div class="image-type-section">
+                        <h3>Entry Images</h3>
+                        <div class="images-container" id="entryImages"></div>
+                    </div>
+                    <div class="image-type-section">
+                        <h3>Exit Images</h3>
+                        <div class="images-container" id="exitImages"></div>
+                    </div>
+                </div>
+            </section>
+
+        
+            <section id="locations" class="map-section">
+                <div class="section-header">
+                    <h2>Our Locations</h2>
+                    <div class="decorative-line"></div>
+                    <p class="location-subtitle">37+ Premium Parking Locations Across the City</p>
+                </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="location-list">
+                        <div class="location-search">
+                            <input type="text" placeholder="Search location..." id="locationSearch">
+                        </div>
+                        <div class="locations-scroll">
+                            <div class="location-category">
+                                <h4 class="category-title">Downtown Area</h4>
+                                <div class="location-item">
+                                    <h4>Central Business Hub</h4>
+                                    <p>123 Main Street</p>
+                                    <span class="availability available">85% Available</span>
+                                    <div class="spot-details">
+                                        <span><i class="fas fa-car"></i> 150 spots</span>
+                                        <span><i class="fas fa-charging-station"></i> 20 EV spots</span>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <h4>Financial District</h4>
+                                    <p>456 Wall Street</p>
+                                    <span class="availability limited">25% Available</span>
+                                    <div class="spot-details">
+                                        <span><i class="fas fa-car"></i> 200 spots</span>
+                                        <span><i class="fas fa-wheelchair"></i> 15 accessible spots</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="location-category">
+                                <h4 class="category-title">Shopping Districts</h4>
+                                <div class="location-item">
+                                    <h4>City Mall Complex</h4>
+                                    <p>789 Shopping Avenue</p>
+                                    <span class="availability available">70% Available</span>
+                                    <div class="spot-details">
+                                        <span><i class="fas fa-car"></i> 300 spots</span>
+                                        <span><i class="fas fa-motorcycle"></i> 50 bike spots</span>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <h4>Retail Park</h4>
+                                    <p>321 Market Street</p>
+                                    <span class="availability limited">30% Available</span>
+                                    <div class="spot-details">
+                                        <span><i class="fas fa-car"></i> 250 spots</span>
+                                        <span><i class="fas fa-truck"></i> 20 large vehicle spots</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="location-category">
+                                <h4 class="category-title">Business Parks</h4>
+                                <div class="location-item">
+                                    <h4>Tech Hub</h4>
+                                    <p>101 Innovation Drive</p>
+                                    <span class="availability available">90% Available</span>
+                                    <div class="spot-details">
+                                        <span><i class="fas fa-car"></i> 180 spots</span>
+                                        <span><i class="fas fa-charging-station"></i> 40 EV spots</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="features-section">
+                <div class="section-header">
+                    <h2>Why Choose Us</h2>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>24/7 Security</h3>
+                        <p>Round-the-clock surveillance and security personnel</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>EV Charging</h3>
+                        <p>Electric vehicle charging stations available</p>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Providing premium parking solutions since 2010</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#rates">Rates</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@citypark.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Classic City Parking. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
